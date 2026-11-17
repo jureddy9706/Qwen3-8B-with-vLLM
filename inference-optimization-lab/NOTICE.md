@@ -1,8 +1,7 @@
 # Attribution and licensing
 
 The Python orchestration, prompt generator, bounded-admission gateway, summary
-calculations, experiment comparator, and tests in this repository were written
-for this project and are licensed under MIT (see LICENSE).
+calculations, experiment comparator, and tests in this repository are licensed under MIT (see LICENSE).
 
 This repository does **not** contain Qwen3 model weights or vLLM source code.
 It integrates independently installed upstream dependencies:
@@ -12,6 +11,5 @@ It integrates independently installed upstream dependencies:
 - [FastAPI](https://fastapi.tiangolo.com/), [httpx](https://www.python-httpx.org/),
   [Prometheus](https://prometheus.io/): third-party libraries and services with their own licenses.
 
-This implementation follows public API documentation, not copied code from a
-third-party inference-benchmarking repository. Reported performance belongs to
-those respective authors unless independently reproduced here.
+This implementation uses documented upstream APIs. Benchmark results are attributed
+to their respective experiments; measurements from different workloads are not directly comparable.

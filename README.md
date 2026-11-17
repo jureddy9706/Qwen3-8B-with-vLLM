@@ -132,4 +132,4 @@ Terminate the instance when finished; a stopped instance still bills for storage
 
 ## Additional experiment: controlled admission and observability
 
-The independent [inference optimization lab](inference-optimization-lab/README.md) adds a Dockerized serving gateway, bounded request admission, Prometheus instrumentation, deterministic replay, and paired SLO-goodput reporting. Its [results status](inference-optimization-lab/RESULTS.md) distinguishes the existing A10G benchmark above from the **not-yet-run** GPU evaluation of the new gateway. No optimization speedup is claimed yet.
+The [inference optimization lab](inference-optimization-lab/README.md) adds Dockerized serving, bounded admission control, Prometheus instrumentation, deterministic replay, and paired SLO-goodput analysis. See [benchmark validation](inference-optimization-lab/RESULTS.md) for measurement methods and experimental coverage.

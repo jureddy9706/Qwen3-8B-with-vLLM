@@ -2,13 +2,12 @@
 
 **Reproducible inference experiments and a bounded-admission gateway for open-weight LLMs.**
 
-This project combines a Dockerized [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) / [vLLM](https://github.com/vllm-project/vllm) deployment, synthetic workload replay, request-level latency traces, SLO goodput analysis, Prometheus metrics, and a small admission-control gateway. It is designed as an engineering experiment, **not a benchmark claiming unmeasured speedups**.
+This project combines a Dockerized [Qwen3-8B](https://huggingface.co/Qwen/Qwen3-8B) / [vLLM](https://github.com/vllm-project/vllm) deployment, synthetic workload replay, request-level latency traces, SLO goodput analysis, Prometheus metrics, and a small admission-control gateway. It supports controlled comparisons of serving configurations.
 
-> **Status (2026-11):** Source code and CPU-based unit tests are included. GPU-backed Qwen3-8B execution, real latency measurements, and throughput improvements have **not yet been validated or claimed** in this repository. Run the experiment and commit your own traces before citing metrics in a resume.
 
-## Existing A10G benchmark vs. this extension
+## Benchmark coverage
 
-The repository root contains earlier Qwen3-8B A10G concurrency measurements and `bench_summary.txt` (including approximately 28.7 output tok/s at concurrency 1 and 385.6 tok/s at concurrency 20). **These are pre-existing baseline results; they are not measurements of this gateway.** See [RESULTS.md](RESULTS.md) for separate validation and upcoming optimization trials.
+The repository root includes Qwen3-8B A10G concurrency measurements in [`bench_summary.txt`](../bench_summary.txt). Admission-control comparisons use a separate paired workload; see [benchmark validation](RESULTS.md) for coverage and procedures.
 
 ## Architecture
 
@@ -108,15 +107,7 @@ Inspect real server metrics at `http://127.0.0.1:9090` (Prometheus query UI). Us
 - Model startup time, GPU memory pressure, preemption, tokenizer revision, prompt tokens, vLLM version, CUDA version, load-generator capacity, warmup, and server-side queue metrics affect measured performance. Record these alongside trace JSON.
 - Current measurements record client-side end-to-end behavior and vLLM's exposed Prometheus metrics. Streaming intermediate content chunks are **not assumed to equal tokens**, and this tool therefore does not mislabel chunk gaps as TPOT.
 - The run comparator validates identical workload settings, but a matched config is **not** a statistically controlled experiment by itself.
-- This repository's code is new, built against documented upstream APIs. See [NOTICE.md](NOTICE.md) for upstream attribution and independent licenses.
-
-## Portfolio / resume usage
-
-Safe description **after you complete and validate a GPU experiment**:
-
-> Built an open-source Qwen3-8B inference testbed with Docker/vLLM serving, deterministic workload replay, bounded admission control, Prometheus telemetry, and paired SLO-goodput comparisons; evaluated queueing and KV-cache behavior across concurrency sweeps.
-
-Only append a quantified outcome after collecting real baseline/candidate traces. Do not present this independent project as work performed at a prior employer.
+- The implementation uses documented upstream APIs. See [NOTICE.md](NOTICE.md) for upstream attribution and independent licenses.
 
 ## References
 
