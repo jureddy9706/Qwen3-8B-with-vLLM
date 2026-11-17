@@ -130,3 +130,7 @@ Terminate the instance when finished; a stopped instance still bills for storage
 - Longer prompts, to see prefill-heavy behavior
 - Raising the KV cache budget (the log suggests up to ~4.3 GiB is possible)
 - The same model on a managed inference platform, compared with this self-managed setup
+
+## Additional experiment: controlled admission and observability
+
+The independent [inference optimization lab](inference-optimization-lab/README.md) adds a Dockerized serving gateway, bounded request admission, Prometheus instrumentation, deterministic replay, and paired SLO-goodput reporting. Its [results status](inference-optimization-lab/RESULTS.md) distinguishes the existing A10G benchmark above from the **not-yet-run** GPU evaluation of the new gateway. No optimization speedup is claimed yet.

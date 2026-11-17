@@ -1,0 +1,15 @@
+# These are synthetic request *word* counts, not exact tokenizer lengths.
+model: Qwen/Qwen3-8B
+base_url: http://127.0.0.1:8000
+num_requests: 100
+arrival_rps: 2.0
+max_inflight: 16
+seed: 41
+max_output_tokens: 64
+timeout_seconds: 120
+min_prompt_words: 100
+max_prompt_words: 600
+shared_prefix: true
+ttft_slo_ms: 1500
+e2e_slo_ms: 12000
+enable_thinking: false
