@@ -16,7 +16,6 @@ A hands-on benchmark of LLM inference on one GPU, to see the core serving tradeo
 | Engine | vLLM 0.30.0, default settings except `--max-model-len 8192` |
 | Model | [`Qwen/Qwen3-8B`](https://huggingface.co/Qwen/Qwen3-8B), BF16, no quantization |
 | Defaults observed in logs | FlashAttention 2, continuous batching, chunked prefill, prefix caching on, 92% GPU memory reserved |
-| Date | October 2026 |
 
 ```bash
 vllm serve Qwen/Qwen3-8B --max-model-len 8192
