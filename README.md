@@ -58,7 +58,7 @@ run 5: TTFT 75 ms, ~29.2 tokens/s, total 8.40 s
 
 ## Under load
 
-`vllm bench serve` with random prompts of 512 input tokens and 256 output tokens, at four concurrency levels. Full output in [`results/bench_summary.txt`](results/bench_summary.txt).
+`vllm bench serve` with random prompts of 512 input tokens and 256 output tokens, at four concurrency levels. Full output in [`results/bench_summary.txt`](bench_summary.txt).
 
 | Concurrency | Output throughput (tok/s) | Per-user speed (tok/s) | Mean TTFT | P99 TTFT | P99 ITL |
 |---|---|---|---|---|---|
