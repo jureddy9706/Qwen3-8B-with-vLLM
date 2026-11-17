@@ -8,6 +8,7 @@ A hands-on benchmark of LLM inference on one GPU, to see the core serving tradeo
 
 ## Setup
 
+
 | | |
 |---|---|
 | Instance | AWS EC2 `g5.xlarge` (1x NVIDIA A10G, 24 GB) |
