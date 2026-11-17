@@ -44,7 +44,7 @@ class AdmissionLimiter:
                         self._condition.wait_for(lambda: self.active < self.max_active),
                         timeout=self.wait_timeout_s,
                     )
-                except TimeoutError as exc:
+                except (TimeoutError, asyncio.TimeoutError) as exc:
                     raise AdmissionRejected("queue_timeout") from exc
                 self.active += 1
                 return time.perf_counter() - started
