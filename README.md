@@ -4,7 +4,7 @@ A hands-on benchmark of LLM inference on one GPU, to see the core serving tradeo
 
 **Headline:** going from 1 to 20 concurrent requests raised output throughput **13x** (29 → 386 tokens/s) while each user slowed from 29 to 21 tokens/s. At 40 concurrent requests, throughput rose only another 31%, and P99 time to first token reached **9.6 s**, because the KV cache was full and requests had to wait.
 
-![Output throughput and time to first token by concurrency](images/throughput_vs_ttft.png)
+![Output throughput and time to first token by concurrency](throughput_vs_ttft.png)
 
 ## Setup
 
